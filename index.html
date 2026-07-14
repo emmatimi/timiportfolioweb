@@ -8,12 +8,26 @@
       content="Full-stack developer portfolio for Ademoroti Emmanuel Oluwatimileyin, featuring React interfaces, Firebase-backed CMS dashboards, Node.js and Express development, responsive UI, and deployed business websites."
     />
     <meta name="theme-color" content="#12352e" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Ademoroti Emmanuel Oluwatimileyin" />
+    <link rel="canonical" href="https://emmatimi.github.io/myportfoliowebsite/" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <meta property="og:title" content="Ademoroti Emmanuel | Full-Stack Developer" />
     <meta
       property="og:description"
       content="Live full-stack projects, React interfaces, Firebase-backed CMS dashboards, APIs, and responsive business websites."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emmatimi.github.io/myportfoliowebsite/" />
+    <meta property="og:site_name" content="Ademoroti Emmanuel Portfolio" />
+    <meta property="og:locale" content="en_NG" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ademoroti Emmanuel | Full-Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Explore live React, Node.js, Firebase, CMS, and responsive web projects by a full-stack developer in Lagos, Nigeria."
+    />
+    <link rel="sitemap" type="application/xml" href="sitemap.xml" />
     <title>Ademoroti Emmanuel | Full-Stack Developer</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
@@ -22,10 +36,15 @@
         "@type": "Person",
         "name": "Ademoroti Emmanuel Oluwatimileyin",
         "jobTitle": "Full-Stack Developer",
-        "email": "mailto:emmanuelademoroti01@gmail.com",
-        "url": "https://github.com/emmatimi",
+        "email": "emmanuelademoroti01@gmail.com",
+        "url": "https://emmatimi.github.io/myportfoliowebsite/",
         "sameAs": ["https://github.com/emmatimi"],
-        "knowsAbout": ["React", "JavaScript", "Node.js", "Express.js", "Firebase", "Python", "Flask", "Full-Stack Development"]
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lagos",
+          "addressCountry": "NG"
+        },
+        "knowsAbout": ["React", "JavaScript", "Node.js", "Express.js", "Firebase", "Python", "Flask", "Web Development", "Responsive Web Design", "API Development"]
       }
     </script>
   </head>
@@ -38,7 +57,19 @@
         <span class="brand-text">Ademoroti Emmanuel O.</span>
       </a>
 
-      <nav class="nav-links" aria-label="Primary navigation">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#proof">Proof</a>
         <a href="#skills">Skills</a>

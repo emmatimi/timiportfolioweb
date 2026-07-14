@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emmatimi.github.io/myportfoliowebsite/sitemap.xml

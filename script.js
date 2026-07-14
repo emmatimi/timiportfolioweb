@@ -1,5 +1,7 @@
 const revealItems = document.querySelectorAll("[data-reveal]");
 const navLinks = document.querySelectorAll(".nav-links a");
+const siteHeader = document.querySelector(".site-header");
+const menuToggle = document.querySelector(".menu-toggle");
 const sections = [...navLinks]
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
@@ -35,3 +37,28 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
+
+const closeMenu = () => {
+  siteHeader.classList.remove("menu-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+};
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = siteHeader.classList.toggle("menu-open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+});
+
+navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && siteHeader.classList.contains("menu-open")) {
+    closeMenu();
+    menuToggle.focus();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 620) closeMenu();
+});

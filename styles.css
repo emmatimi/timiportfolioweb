@@ -135,6 +135,30 @@ a {
   color: var(--forest);
 }
 
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 42px;
+  padding: 10px;
+  border: 1px solid rgba(18, 53, 46, 0.26);
+  background: rgba(255, 253, 247, 0.82);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--forest);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.menu-toggle:focus-visible {
+  outline: 3px solid rgba(18, 53, 46, 0.35);
+  outline-offset: 3px;
+}
+
 main {
   overflow: hidden;
 }
@@ -717,6 +741,8 @@ h3 {
   .site-header {
     width: min(100% - 22px, 1180px);
     gap: 12px;
+    grid-template-columns: 1fr auto;
+    padding: 10px 0;
   }
 
   .brand-text,
@@ -724,8 +750,39 @@ h3 {
     display: none;
   }
 
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-header.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .site-header.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(18, 53, 46, 0.16);
+    background: rgba(255, 253, 247, 0.96);
+    box-shadow: 0 14px 30px rgba(18, 53, 46, 0.12);
+    overflow: visible;
+  }
+
+  .site-header.menu-open .nav-links {
+    display: grid;
+  }
+
   .nav-links a {
-    padding-inline: 10px;
+    width: 100%;
+    padding: 12px;
   }
 
   .hero h1 {
